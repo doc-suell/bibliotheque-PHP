@@ -1,0 +1,141 @@
+body {
+	line-height: 1.2;
+	font-size: 16px;
+	font-family: roboto;
+}
+h1 {
+	font-family: OS_B;
+	font-size: 35px;
+	color: $blue;
+	margin: 40px 0 25px;
+}
+h2 {
+	font-size: 1.6rem;
+	margin: 20px 0 15px;
+}
+h3 {
+	font-size: 1.3rem;
+	margin: 15px 0 10px;
+}
+h4 {
+	font-size: 1.2rem;
+	margin: 15px 0 10px;
+	font-weight: 700;
+}
+header {
+	height: 50px;
+	background-color: blue;
+	position: relative;
+	nav {
+		&>ul {
+			width: 90%;
+			margin: 0 auto;
+			height: 50px;
+			list-style-type: none;
+			font-family: OS_I;
+			@include flex(space-evenly, center);
+			&>li {
+				font-size: 20px;
+				cursor: pointer;
+				color: white;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+				&>ul {
+					@include flex(center, center);
+					&>li {
+						margin: 0 20px;
+					}
+				}
+			}
+		}
+	}
+}
+#books {
+	padding: 0 5%;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+.book {
+	width: calc(30% - 40px);
+	padding: 30px 20px;
+	margin: 10px;
+	box-sizing: border-box;
+	border: 1px solid $grey;
+	.picture {
+		@include flex(center, center);
+	}
+	.description {
+		padding: 10% 2% 2%;
+
+	}
+	.resume {
+		@extend h3;
+	}
+}
+
+#details {
+	width: 60%;
+	margin: auto;
+}
+.float_left {
+	float: left;
+	max-width: 160px;
+	margin: 0 20px 20px 0;
+}
+.status {
+	clear: both;
+}
+.details p span {
+	font-weight: bold;
+}
+.dispo {
+	color: green;
+	font-size: 24px;
+}
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.active {
+	color: red;
+	transform: scale(1.2);
+	cursor: not-allowed;
+}
+.active a {
+	color: red;
+}
+
+.navigation {
+	width: 100%;
+	margin: 30px auto;
+	@include flex(center, center);
+}
+.navigation li {
+	margin: 0 10px;
+}
+.connect {
+	position: relative;
+}
+.modal_connect {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	color: #000;
+	@include font(OS_R, 15);
+	background-color: #fff;
+	padding: 20px;
+	border: 2px solid #000;
+	border-radius: 10px;
+}
+#add_book {
+	color: $blue;
+	@include font(OS_R, 20);
+	@include flex(center, center);
+	i {
+		margin-right: 10px;
+	}
+}
